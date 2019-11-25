@@ -5,8 +5,13 @@ const Set = (props) => {
         <div className="Set">
             <p>
                 <span className="SetNumbers">
-                    <span className="SetNumber">{`Reps: ${props.setData.Reps}`}</span>
-                    <span className="SetNumber">{`Weight: ${props.setData.Weight} kg`}</span>                 
+                    <span className="SetNumber">
+                        {window.innerWidth < 600 ? `${props.setData.Reps} x ` : `Reps: ${props.setData.Reps}`}
+                    </span>
+
+                    <span className="SetNumber">
+                        {window.innerWidth < 600 ? `${props.setData.Weight} kg` : `Weight: ${props.setData.Weight} kg`}
+                    </span>                 
                 </span>
 
                 <button 

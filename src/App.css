@@ -7,6 +7,35 @@
   margin-bottom: 1em;  
 }
 
+.Footer
+{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #1b1b1b;
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0.6em 0em 0.6em 0em;
+  color: #949292;
+}
+
+.MainContent {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 150px; /* height of your footer */
+ }
+
+* {
+  box-sizing: border-box;
+ }
+ *:before,
+ *:after {
+  box-sizing: border-box;
+ }
+
 .BrandName
 {
   font-size: 2em;
@@ -70,6 +99,7 @@ button {
 	color:#d4d3d3;
   font-family:Arial;
   padding: 0.7em 2em;
+  margin-bottom: 0.3em;
   margin-right: 0.3em;
   width: auto;
 	text-decoration:none;
@@ -116,7 +146,10 @@ button {
   margin-top: 2em;
 }
 
-
+.Hidden
+{
+  display: none;
+}
 
 .AllSets > div:first-child > div:first-child
 {
@@ -216,7 +249,8 @@ hr
  
 .SetNumber:first-of-type
 {
-  margin-right: 2em;
+  margin-right: 0em;
+  margin-left:  1em;
 }
 
 

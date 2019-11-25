@@ -80,7 +80,6 @@ const MultiSeriesLineGraph = (props) => {
 
         const [data, ratio] = formatData();
         let workoutDate = new Date();
-        console.log(data);
         
         return (
             <VictoryChart domainPadding={20}>

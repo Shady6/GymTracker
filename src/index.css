@@ -9,3 +9,9 @@ body{
   sans-serif;;
   font-size: 1.0rem;
 }
+
+
+body, html, #root, .App
+{
+  position: relative;
+}

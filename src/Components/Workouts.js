@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import AddWorkout from './AddWorkout';
 import Workout from './Workout';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Workouts = (props) => {
 
@@ -123,7 +124,6 @@ const Workouts = (props) => {
 
     const importWorkoutData = (event) =>
     {
-        console.log('hey')
         let file = event.target.files[0];          
         file.text().then((text) => {
             saveWorkouts(JSON.parse(text));
@@ -149,18 +149,29 @@ const Workouts = (props) => {
     ) : null
 
     return (
-        <div className="Workouts">
-            <Navbar
-            clearData={clearWorkouts} 
-            importData={importWorkoutData}
-            exportData={exportWorkoutData} />
-            <div className="AppContent">
-                <AddWorkout 
-                className="AddWorkout"
-                addWorkout={addWorkout} />
-                {renderWorkouts.length !== 0 ? renderWorkouts : <p>No workouts avaible</p>}                          
+        <React.Fragment>
+            <div className="Workouts">
+                
+                <div className="MainContent">
+                    <Navbar
+                    clearData={clearWorkouts} 
+                    importData={importWorkoutData}
+                    exportData={exportWorkoutData} />
+
+                    <div className="AppContent">
+
+                    <AddWorkout 
+                    className="AddWorkout"
+                    addWorkout={addWorkout} />
+                    {renderWorkouts.length !== 0 ? renderWorkouts : <p>No workouts avaible</p>}                          
+                </div>
+
+                </div>
+ 
             </div>
-        </div>
+            <Footer />
+        </React.Fragment>
+        
     );
 }
 

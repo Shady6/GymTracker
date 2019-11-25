@@ -9,6 +9,7 @@ const Workout = (props) => {
     const [editing, setEditing] = useState(false);
     const [editedWorkoutName, setEditedWorkoutName] = useState("");
     const [showGraph, setShowGraph] = useState(false);
+    const [showSets, setShowSets] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,7 +47,23 @@ const Workout = (props) => {
             return sets;
         }
         return "No sets added today";
-    } 
+    }
+    
+    const renderCollapseButton = () => 
+    {
+        let sessionIndex = props.findSessionIndex(props.workoutIndex, new Date());
+
+        if (sessionIndex !== -1 && props.workoutData.Sessions[sessionIndex].Sets.length !== 0)
+        {
+            return <button style={{backgroundColor: showSets ? "#3a2937" : "#543a50"}} onClick={() => {
+                setShowSets(!showSets);
+            }}>
+                {showSets ? "Collapse" : "Uncollapse"}
+            </button>
+        }
+
+        return null
+    }
 
     return (
         <div className="WorkoutContainer">
@@ -67,9 +84,10 @@ const Workout = (props) => {
             <button onClick={() => {props.deleteWorkout(props.workoutIndex)}}>Delete</button>
             <button onClick={startEditing}>{editing ? "Cancel edit" : "Edit"}</button>
             <button onClick={() => {setShowGraph(!showGraph)}}>{showGraph ? "Hide graphs" : "Show graphs"}</button>
+            {renderCollapseButton()}
             <AddSet workoutIndex={props.workoutIndex} addSet={props.addSet} />
             {editing && editingForm}
-            <div className="AllSets">
+            <div style={{display: showSets ? "block" : "none"}} className="AllSets">
                 {renderSets()}
             </div>
         </div>
