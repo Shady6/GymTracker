@@ -132,7 +132,7 @@ const StackedColumnGraph = (props) => {
                   return `${d.getDate()}.${d.getMonth() + 1}`}
                 }
                 />
-                <VictoryAxis tickFormat={(y) => `${y}kg`} dependentAxis />
+                <VictoryAxis   style={{tickLabels: {fontSize: 10}}} tickFormat={(y) => `${y}kg`} dependentAxis />
 
                 <VictoryStack>
 
