@@ -23,7 +23,7 @@ const MultiSeriesLineGraph = (props) => {
       return [
         {
           target: "data",
-          mutation: () => ({style: {fill: "#2c2374", width: 0}, size: 4})
+          mutation: () => ({style: {fill: "#2c2374", width: 0}, size: window.innerWidth < 600 ? 8 : 4})
         }, {
           target: "labels",
           mutation: () => ({ active: true })
@@ -143,7 +143,7 @@ const MultiSeriesLineGraph = (props) => {
 
                 <VictoryScatter
                 color="#1b4c11"
-                  size={ window.innerWidth < 600 ? ({ active }) => active ? 8 : 6 : ({ active }) => active ? 4 : 3}                
+                  size={ window.innerWidth < 600 ? (({ active }) => active ? 8 : 6) : (({ active }) => active ? 4 : 3)}                
                   events={[{
                     target: "data",
                     eventHandlers: scatterEventHandlers

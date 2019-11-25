@@ -93,6 +93,7 @@ const StackedColumnGraph = (props) => {
         // processes data in a way prepared for this visualization (stacked columns)
         let data = processData();
         let j = 0;
+        let sessionsCount = Math.floor((data[0][data[0].length - 1].DateValue - data[0][0].DateValue) / 10)
         let victoryBars = data.map((session, i) => {
           if (j*25 >= 255)
             j = 0;
@@ -115,8 +116,9 @@ const StackedColumnGraph = (props) => {
                 flyoutWidth={(datum) => {return datum.text.length / 3 * datum.style.fontSize}} />            
                 }
               style = {{
-                data: {fill: color}
-              }}        
+                data: {fill: color}                
+              }}     
+              barWidth={sessionsCount < 3 ? 30 : null} 
               key={i} x="DateValue" y="SetVolume" data={session} events={events} /> });
         
 
