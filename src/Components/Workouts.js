@@ -150,8 +150,7 @@ const Workouts = (props) => {
 
     return (
         <React.Fragment>
-            <div className="Workouts">
-                
+            <div className="Workouts">             
                 <div className="MainContent">
                     <Navbar
                     clearData={clearWorkouts} 

@@ -10,7 +10,7 @@ const Navbar = (props) => {
 
     return (
         <div className="Navbar">
-            <span className="BrandName">Workout!</span>
+            <span className="BrandName">GymTracker</span>
 
             <span 
             onClick={props.exportData}

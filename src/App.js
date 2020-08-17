@@ -5,7 +5,7 @@ import Workouts from './Components/Workouts';
 function App() {
   return (
     <div className="App">
-      <Workouts />    
+      <Workouts />   
     </div>
   );
 }
