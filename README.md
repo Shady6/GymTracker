@@ -25,8 +25,8 @@ In order to run the application you'll need to have the following installed
 
 ### Starting the project
 1. Clone this repository to desired location ```git@github.com:Shady6/GymTracker.git```
-2. Open command line in the project directory and type npm i and enter
-3. Run npm start and the application will be running at localhost:7000
+2. Open command line in the project directory and type ```npm i``` and enter
+3. Run ```npm start``` and the application will be running at localhost:7000
 
 
 
